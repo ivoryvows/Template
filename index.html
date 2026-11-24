@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -276,8 +275,6 @@ p {
   display:block;
 }
 
-/* TOP PARAGRAPH */
-
 .welcomeText {
   position:absolute;
   top:19vh;
@@ -297,8 +294,6 @@ p {
   font-weight:700;
   color:var(--darkBeige);
 }
-
-/* LOWER AYAT */
 
 .ayatQuote {
   position:absolute;
@@ -335,9 +330,7 @@ p {
   color:var(--darkBeige);
 }
 
-/* DATE REVEAL - FULL PHONE SCREEN LAYOUT */
-
-/* ONLY THE SCRATCH SECTION BACKGROUND IS WIDER */
+/* DATE REVEAL - FULL SCREEN SQUARE SCRATCH */
 
 #dateReveal .bg {
   width:120%;
@@ -349,19 +342,22 @@ p {
 
 #dateReveal {
   min-height:100svh;
+  height:100svh;
+  align-items:stretch;
 }
 
 #dateReveal .content {
   width:100%;
   max-width:450px;
   min-height:100svh;
+  height:100svh;
+  margin:0 auto;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:flex-start;
-  padding:9vh 22px 9vh;
+  padding:8vh 22px 8vh;
   color:var(--darkBeige);
-  text-shadow:0 1px 3px rgba(255,255,255,.35);
 }
 
 .dateHeading {
@@ -369,6 +365,7 @@ p {
   line-height:1.3;
   margin-bottom:12px;
   color:var(--darkBeige);
+  text-shadow:0 1px 3px rgba(255,255,255,.35);
   flex-shrink:0;
 }
 
@@ -382,10 +379,13 @@ p {
   flex-shrink:0;
 }
 
+/* PERFECT SQUARE SCRATCH BOX */
+
 .scratchWrap {
   position:relative;
-  width:min(320px,86vw);
-  height:165px;
+  width:min(290px,76vw);
+  aspect-ratio:1 / 1;
+  height:auto;
   margin:auto 0;
   background:transparent;
   border:0;
@@ -817,11 +817,12 @@ p {
     font-size:12px!important;
   }
 
-  /* SCRATCH PAGE MOBILE */
+  /* SQUARE SCRATCH PAGE MOBILE */
 
   #dateReveal .content {
     min-height:100svh;
-    padding:9vh 20px 9vh;
+    height:100svh;
+    padding:8vh 18px 8vh;
   }
 
   .dateHeading {
@@ -834,8 +835,9 @@ p {
   }
 
   .scratchWrap {
-    width:min(310px,86vw);
-    height:155px;
+    width:min(270px,76vw);
+    aspect-ratio:1 / 1;
+    height:auto;
   }
 
   .scratchHint {
@@ -1379,7 +1381,7 @@ function animateIntroWords(){
 
 }
 
-/* RECTANGULAR PEACH PINK SCRATCH BOX */
+/* SQUARE PEACH PINK SCRATCH BOX */
 
 const canvas=document.getElementById('scratchCanvas');
 const ctx=canvas.getContext('2d');
@@ -1392,7 +1394,7 @@ let scratchPixelCount=0;
 let lastScratchX=null;
 let lastScratchY=null;
 
-/* ROUNDED RECTANGLE SHAPE */
+/* ROUNDED SQUARE SHAPE */
 
 function scratchShapePath(context,x,y,width,height,radius){
 
@@ -1439,7 +1441,7 @@ function setupScratch(){
   const y=inset;
   const width=rect.width-inset*2;
   const height=rect.height-inset*2;
-  const radius=13;
+  const radius=18;
 
   /* BABY PINK PEACH COATING */
 
@@ -1520,9 +1522,9 @@ function setupScratch(){
   ctx.lineWidth=1.3;
   ctx.stroke();
 
-  /* SCRATCH MESSAGE */
+  /* DARK BEIGE SCRATCH MESSAGE */
 
-  ctx.fillStyle='#a47b80';
+  ctx.fillStyle='#705744';
   ctx.textAlign='center';
   ctx.textBaseline='middle';
   ctx.font='600 10px DM Sans, sans-serif';
