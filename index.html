@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -275,7 +276,7 @@ p {
   display:block;
 }
 
-/* TOP PARAGRAPH - SLIGHTLY LOWER */
+/* TOP PARAGRAPH */
 
 .welcomeText {
   position:absolute;
@@ -297,7 +298,7 @@ p {
   color:var(--darkBeige);
 }
 
-/* LOWER AYAT - SLIGHTLY HIGHER */
+/* LOWER AYAT */
 
 .ayatQuote {
   position:absolute;
@@ -335,6 +336,16 @@ p {
 }
 
 /* DATE REVEAL - FULL PHONE SCREEN LAYOUT */
+
+/* ONLY THE SCRATCH SECTION BACKGROUND IS WIDER */
+
+#dateReveal .bg {
+  width:120%;
+  height:100%;
+  left:-10%;
+  object-fit:cover;
+  object-position:center;
+}
 
 #dateReveal {
   min-height:100svh;
@@ -380,6 +391,7 @@ p {
   border:0;
   overflow:visible;
   flex-shrink:0;
+  z-index:2;
 }
 
 .dateUnder {
