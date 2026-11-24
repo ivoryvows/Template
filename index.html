@@ -1,1 +1,1450 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fcecf2">
+<title>Sanaa & Areeb | Nikkah Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink:#e8a8bd;
+  --deep:#bd7895;
+  --white:#fffafd;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  background:#fcecf2;
+  color:white;
+  font-family:'Cormorant Garamond',serif;
+  overflow-x:hidden;
+}
+
+body.locked {
+  overflow:hidden;
+}
+
+section {
+  position:relative;
+  width:100%;
+  min-height:100svh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fcecf2;
+}
+
+.bg {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+
+.content {
+  position:relative;
+  z-index:2;
+  width:100%;
+  padding:25px 22px;
+  text-align:center;
+}
+
+.script {
+  font-family:'Great Vibes',cursive;
+  font-weight:400;
+}
+
+.arabic {
+  font-family:'Amiri',serif;
+  direction:rtl;
+}
+
+.white {
+  color:#fff;
+  text-shadow:0 1px 7px rgba(104,44,68,.22);
+}
+
+h2 {
+  font-size:clamp(28px,7vw,42px);
+  font-weight:400;
+}
+
+p {
+  font-size:17px;
+  line-height:1.5;
+}
+
+/* FALLING DOTS */
+
+#particles {
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:100;
+  overflow:hidden;
+}
+
+.particle {
+  position:absolute;
+  top:-15px;
+  background:white;
+  border-radius:50%;
+  animation:fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform:translateY(110vh) translateX(30px);
+    opacity:.1;
+  }
+}
+
+/* MUSIC BUTTON */
+
+#musicBtn {
+  position:fixed;
+  z-index:200;
+  bottom:20px;
+  right:18px;
+  width:43px;
+  height:43px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.8);
+  background:rgba(211,139,166,.85);
+  color:white;
+  font-size:20px;
+  display:none;
+}
+
+/* OPENING DOORS */
+
+#opening {
+  background:#f7e5ec;
+}
+
+.door {
+  position:absolute;
+  top:0;
+  height:100%;
+  width:50%;
+  object-fit:cover;
+  z-index:5;
+  transition:transform 2.8s cubic-bezier(.7,0,.2,1);
+}
+
+#leftDoor {
+  left:0;
+  transform-origin:left center;
+}
+
+#rightDoor {
+  right:0;
+  transform-origin:right center;
+}
+
+#opening.open #leftDoor {
+  transform:perspective(1200px) rotateY(-105deg);
+}
+
+#opening.open #rightDoor {
+  transform:perspective(1200px) rotateY(105deg);
+}
+
+.openText {
+  position:absolute;
+  z-index:8;
+  bottom:12%;
+  color:white;
+  font-family:'Great Vibes',cursive;
+  font-size:37px;
+  text-shadow:0 2px 10px #9c627a;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity:.65;
+    transform:scale(1.04);
+  }
+}
+
+#startBtn {
+  position:absolute;
+  inset:0;
+  z-index:10;
+  background:transparent;
+  border:0;
+}
+
+/* INTRO IMAGE */
+
+#intro {
+  background:#edc5d3;
+}
+
+.introText {
+  max-width:390px;
+  margin:auto;
+  opacity:0;
+  transition:opacity .5s;
+}
+
+.introText.show {
+  opacity:1;
+}
+
+.bismillah {
+  font-size:27px;
+  margin-bottom:13px;
+}
+
+.introText p {
+  margin:5px 0;
+  font-size:15px;
+  line-height:1.4;
+}
+
+.couple {
+  font-family:'Great Vibes',cursive;
+  font-size:36px;
+  margin:3px 0;
+}
+
+.parent {
+  font-size:13px!important;
+  margin-top:0!important;
+}
+
+/* AYAT - DIRECTLY ON BACKGROUND, NO FRAMES */
+
+#ayat {
+  background:#e9b9cd;
+}
+
+#ayat .content {
+  width:100%;
+  max-width:500px;
+  min-height:100svh;
+  padding:8vh 25px 7vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.welcomeText {
+  width:100%;
+  max-width:340px;
+  font-size:13px;
+  line-height:1.45;
+  margin-top:0;
+}
+
+.welcomeText p {
+  font-size:13px;
+  line-height:1.45;
+}
+
+.ayatQuote {
+  width:100%;
+  max-width:400px;
+  margin-top:auto;
+  padding-top:55px;
+}
+
+.ayatArabic {
+  font-size:21px;
+  line-height:1.8;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.translation {
+  font-style:italic;
+  font-size:14px!important;
+  line-height:1.5;
+}
+
+.reference {
+  margin-top:8px;
+  font-size:13px!important;
+}
+
+/* DATE REVEAL */
+
+#dateReveal .content {
+  max-width:450px;
+}
+
+.dateHeading {
+  font-size:29px;
+  margin-bottom:20px;
+}
+
+.scratchWrap {
+  position:relative;
+  width:min(310px,85vw);
+  height:180px;
+  margin:auto;
+  border-radius:22px;
+  overflow:hidden;
+  border:3px solid white;
+  box-shadow:0 8px 30px #b66d8c44;
+  background:#f7cbd9;
+}
+
+.dateUnder {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(145deg,#f8dce6,#fff5f8);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:#b56e8c;
+}
+
+.dateUnder strong {
+  font-size:35px;
+  font-family:'Great Vibes',cursive;
+}
+
+.dateUnder span {
+  font-family:'DM Sans',sans-serif;
+  font-size:12px;
+  letter-spacing:3px;
+  margin-top:10px;
+}
+
+#scratchCanvas {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  touch-action:none;
+  cursor:crosshair;
+}
+
+.scratchHint {
+  margin-top:15px;
+  font-size:15px;
+}
+
+/* COUNTDOWN */
+
+#countdown {
+  background:#e7b5c8;
+}
+
+#countVideo {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.countOverlay {
+  position:absolute;
+  z-index:3;
+  bottom:17%;
+  width:100%;
+  text-align:center;
+  padding:10px;
+}
+
+.countNumbers {
+  display:flex;
+  justify-content:center;
+  gap:9px;
+}
+
+.countUnit {
+  min-width:60px;
+  color:white;
+  text-shadow:0 2px 8px #88546b;
+}
+
+.countUnit strong {
+  display:block;
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(23px,6vw,34px);
+  font-weight:700;
+}
+
+.countUnit span {
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;
+  letter-spacing:1px;
+}
+
+/* CELEBRATION */
+
+#celebration {
+  align-items:stretch;
+}
+
+#celebration .content {
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  padding:25px 15px 24px;
+}
+
+.curveHeading {
+  display:inline-block;
+  border:1px solid white;
+  border-radius:45% 45% 10px 10px;
+  padding:11px 22px 9px;
+  font-size:23px;
+  margin-bottom:12px;
+  flex-shrink:0;
+}
+
+.videoBox {
+  width:100%;
+  max-width:550px;
+  margin:auto;
+}
+
+.videoBox video {
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.mapBtn {
+  display:inline-block;
+  margin-top:10px;
+  border:1px solid white;
+  border-radius:30px;
+  padding:9px 21px;
+  background:rgba(255,255,255,.2);
+  color:white;
+  font-size:16px;
+  text-decoration:none;
+}
+
+.celebrationLocation,
+.journeyLocation {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  flex-shrink:0;
+}
+
+/* JOURNEY */
+
+#journey {
+  background:#e9b9cd;
+  align-items:stretch;
+}
+
+#journey .content {
+  max-width:470px;
+  min-height:100svh;
+  margin:auto;
+  padding:18px 20px 24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.storyText {
+  font-size:16px;
+  line-height:1.45;
+}
+
+.storySmall {
+  font-size:14px;
+  margin-top:6px;
+}
+
+.storyNames {
+  font-family:'Great Vibes',cursive;
+  font-size:26px;
+  margin-top:3px;
+}
+
+.qubool {
+  font-family:'Great Vibes',cursive;
+  font-size:23px;
+}
+
+/* FLIGHT: INDIA TO ROZA */
+
+.travel {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+  width:100%;
+  max-width:280px;
+  margin:13px auto 10px;
+  height:55px;
+  flex-shrink:0;
+}
+
+.travel img {
+  width:30px;
+  height:30px;
+  object-fit:contain;
+  z-index:2;
+}
+
+.road {
+  position:absolute;
+  left:19%;
+  right:19%;
+  top:50%;
+  height:30px;
+  border-top:3px dotted #fff;
+  border-radius:50%;
+  transform:translateY(-12px) rotate(-5deg);
+}
+
+/* Plane waits at India, then flies to Roza */
+
+.plane {
+  position:absolute;
+  left:14%;
+  top:3px;
+  font-size:23px;
+  color:#f28fb7;
+  z-index:5;
+  opacity:0;
+  transform:rotate(0deg);
+}
+
+#journey.active .plane {
+  animation:flyOnce 5s ease-in-out forwards;
+}
+
+@keyframes flyOnce {
+  0% {
+    left:14%;
+    top:3px;
+    opacity:1;
+    transform:rotate(0deg);
+  }
+
+  /* Wait near India flag */
+
+  20% {
+    left:14%;
+    top:3px;
+    opacity:1;
+    transform:rotate(0deg);
+  }
+
+  /* Fly towards Roza */
+
+  85% {
+    left:78%;
+    top:-8px;
+    opacity:1;
+    transform:rotate(10deg);
+  }
+
+  /* Stop at Roza */
+
+  100% {
+    left:78%;
+    top:-8px;
+    opacity:1;
+    transform:rotate(0deg);
+  }
+}
+
+#nikahVideo {
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+#journey .videoBox {
+  margin:auto;
+  flex-shrink:0;
+}
+
+.journeyLocation {
+  margin-top:auto;
+  padding-top:12px;
+}
+
+/* GIFTS AND FINAL FRAME */
+
+#ending .content {
+  max-width:550px;
+}
+
+.endFrame {
+  border:1px solid white;
+  padding:24px 17px;
+  margin:14px 0;
+  border-radius:8px;
+  background:rgba(195,123,151,.2);
+}
+
+.giftTitle {
+  font-family:'Great Vibes',cursive;
+  font-size:43px;
+  margin-bottom:8px;
+}
+
+.giftHeart {
+  font-size:23px;
+  margin:8px 0;
+}
+
+.giftArabic {
+  font-size:23px;
+  margin-top:16px;
+  line-height:1.8;
+}
+
+.family {
+  font-family:'Great Vibes',cursive;
+  font-size:32px;
+  margin-top:14px;
+}
+
+/* REVEAL */
+
+.reveal {
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity 1s,transform 1s;
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:380px) {
+
+  .countUnit {
+    min-width:52px;
+  }
+
+  .countNumbers {
+    gap:4px;
+  }
+
+  .introText p {
+    font-size:14px;
+  }
+
+  .storyText {
+    font-size:15px;
+  }
+
+  .storyNames {
+    font-size:24px;
+  }
+
+  .qubool {
+    font-size:21px;
+  }
+
+  .welcomeText,
+  .welcomeText p {
+    font-size:12px;
+  }
+
+  .ayatArabic {
+    font-size:19px;
+  }
+
+  .translation {
+    font-size:13px!important;
+  }
+}
+</style>
+</head>
+
+<body class="locked">
+
+<div id="particles"></div>
+
+<audio id="music" src="nasheed.mp3" loop preload="auto"></audio>
+
+<button id="musicBtn" aria-label="Toggle music">♫</button>
+
+<!-- 1. OPENING DOORS -->
+
+<section id="opening">
+  <img src="l.jpg" class="door" id="leftDoor" alt="">
+  <img src="r.jpg" class="door" id="rightDoor" alt="">
+  <div class="openText" id="openText">Tap to Open</div>
+  <button id="startBtn" aria-label="Open invitation"></button>
+</section>
+
+<!-- 2. INTRO IMAGE -->
+
+<section id="intro">
+  <img src="intro.jpg" class="bg" alt="">
+
+  <div class="content white">
+    <div class="introText" id="introText">
+
+      <div class="arabic bismillah">
+        بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+      </div>
+
+      <p>
+        With the blessing of Masomeen (A.S.) and the prayers of our elders,
+      </p>
+
+      <p>
+        we warmly invite you to share in our joy and witness the Nikkah of
+      </p>
+
+      <div class="couple">Sanaa</div>
+
+      <p class="parent">
+        (D/o Mrs. Farhana & Mr. Tariq Zaidi)
+      </p>
+
+      <div class="couple">&</div>
+
+      <div class="couple">Areeb</div>
+
+      <p class="parent">
+        (S/o Mrs. Nargis & Mr. Salman Kazmi)
+      </p>
+
+      <p>
+        May Allah (SWT) bless their bond with love, barakah, and peace.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- 3. AYAT - NO FRAMES -->
+
+<section id="ayat">
+  <img src="ayat.JPG" class="bg" alt="">
+
+  <div class="content white">
+
+    <div class="welcomeText reveal">
+      <p>
+        We are honored to welcome you to the
+        blessed Nikkah ceremony of Sanaa & Areeb.
+        <br><br>
+        As they unite in faith, mercy, and love under the
+        blessings of Allah (SWT) and Masomeen (A.S.),
+        we thank you for sharing in our joy and
+        praying for their lifelong happiness.
+      </p>
+    </div>
+
+    <div class="ayatQuote reveal">
+
+      <div class="arabic ayatArabic">
+        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+        لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+      </div>
+
+      <p class="translation">
+        "And of His signs is that He created for you from yourselves mates that you may find tranquility in them, and He placed between you affection and mercy."
+      </p>
+
+      <p class="reference">
+        [Surah Ar-Rum: 21]
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- 4. DATE REVEAL -->
+
+<section id="dateReveal">
+  <img src="back.JPG" class="bg" alt="">
+
+  <div class="content white">
+
+    <div class="dateHeading script">
+      A beautiful beginning...
+    </div>
+
+    <p style="font-size:16px;margin-bottom:20px">
+      A beautiful day, written by destiny,
+      <br>
+      a precious date to cherish forever.
+    </p>
+
+    <div class="scratchWrap">
+
+      <div class="dateUnder">
+        <strong>19 January 2027</strong>
+        <span>OUR NIKKAH DAY</span>
+      </div>
+
+      <canvas id="scratchCanvas"></canvas>
+
+    </div>
+
+    <p class="scratchHint">
+      Gently scratch to reveal our special day ♡
+    </p>
+
+  </div>
+</section>
+
+<!-- 5. COUNTDOWN -->
+
+<section id="countdown">
+
+  <video id="countVideo"
+    src="count.mov"
+    muted autoplay loop playsinline>
+  </video>
+
+  <div class="countOverlay">
+
+    <div class="countNumbers">
+
+      <div class="countUnit">
+        <strong id="days">00</strong>
+        <span>DAYS</span>
+      </div>
+
+      <div class="countUnit">
+        <strong id="hours">00</strong>
+        <span>HOURS</span>
+      </div>
+
+      <div class="countUnit">
+        <strong id="minutes">00</strong>
+        <span>MINUTES</span>
+      </div>
+
+      <div class="countUnit">
+        <strong id="seconds">00</strong>
+        <span>SECONDS</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 6. CELEBRATION -->
+
+<section id="celebration">
+  <img src="back.JPG" class="bg" alt="">
+
+  <div class="content white">
+
+    <div class="curveHeading script reveal">
+      Join us for the celebration of
+    </div>
+
+    <div class="videoBox reveal">
+      <video src="mehfil.mov"
+        autoplay muted loop playsinline
+        preload="metadata">
+      </video>
+    </div>
+
+    <div class="celebrationLocation">
+
+      <a class="mapBtn" target="_blank" rel="noopener"
+         href="https://www.google.com/maps/search/?api=1&query=Alimentos+Banquet+Ahmedabad">
+        ⌖ View Location
+      </a>
+
+      <p style="font-size:14px;margin-top:5px">
+        Alimentos Banquet, Ahmedabad
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- 7. QUBOOL HAI + JOURNEY + NIKKAH -->
+
+<section id="journey">
+
+  <img src="back.JPG" class="bg" alt="">
+
+  <div class="content white">
+
+    <div class="reveal">
+
+      <p class="storyText">
+        How gently destiny brought us to each other,
+        right where Najaf holds everything in peace.
+      </p>
+
+      <p class="storySmall">
+        In the grace of Mawla Ali (A.S.) and Masomeen (A.S.),
+      </p>
+
+      <p class="storyNames">
+        Sanaa & Areeb
+      </p>
+
+      <p>
+        say <span class="qubool">"Qubool Hai."</span>
+      </p>
+
+    </div>
+
+    <div class="travel reveal">
+
+      <img src="https://flagcdn.com/w80/in.png"
+           alt="India flag">
+
+      <div class="road"></div>
+
+      <img src="roza.PNG" alt="Roza">
+
+      <span class="plane">✈</span>
+
+    </div>
+
+    <div class="videoBox reveal">
+
+      <video id="nikahVideo"
+        src="nikka.MOV"
+        autoplay muted loop playsinline
+        preload="metadata">
+      </video>
+
+    </div>
+
+    <div class="journeyLocation">
+
+      <a class="mapBtn" target="_blank" rel="noopener"
+         href="https://www.google.com/maps/search/?api=1&query=Golden+Pearls+Banquet+Ahmedabad">
+        ⌖ View Location
+      </a>
+
+      <p style="font-size:14px;margin-top:5px">
+        Golden Pearls Banquet, Ahmedabad
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- 8. GIFTS AND FINAL FRAME -->
+
+<section id="ending">
+
+  <img src="back.JPG" class="bg" alt="">
+
+  <div class="content white">
+
+    <div class="endFrame reveal">
+
+      <div class="giftTitle">Gifts</div>
+
+      <div class="giftHeart">♥</div>
+
+      <p>
+        "No gift is better than your blessings. Your heartfelt duas and loving presence are all we cherish as we begin this new journey under the blessed shade and teachings of the Ahlulbayt."
+      </p>
+
+      <div class="arabic giftArabic">
+        بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+      </div>
+
+    </div>
+
+    <div class="endFrame reveal">
+
+      <h2 class="script">We can't wait to celebrate</h2>
+
+      <h2 class="script">with you!</h2>
+
+      <div class="family">
+        Hussain Ali & Dhanani Family
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+
+/* FALLING WHITE DOTS */
+
+const particleArea = document.getElementById('particles');
+
+for(let i=0;i<45;i++){
+
+  const dot=document.createElement('span');
+
+  dot.className='particle';
+  dot.style.left=Math.random()*100+'%';
+  dot.style.animationDuration=(5+Math.random()*8)+'s';
+  dot.style.animationDelay=(-Math.random()*10)+'s';
+  dot.style.opacity=.3+Math.random()*.6;
+
+  const size=2+Math.random()*3;
+
+  dot.style.width=size+'px';
+  dot.style.height=size+'px';
+
+  particleArea.appendChild(dot);
+}
+
+/* MUSIC */
+
+const music=document.getElementById('music');
+const musicBtn=document.getElementById('musicBtn');
+
+let musicPlaying=false;
+
+function playMusic(){
+
+  music.play().then(()=>{
+
+    musicPlaying=true;
+    musicBtn.style.display='block';
+    musicBtn.textContent='♫';
+
+  }).catch(()=>{});
+
+}
+
+musicBtn.addEventListener('click',()=>{
+
+  if(musicPlaying){
+
+    music.pause();
+    musicPlaying=false;
+    musicBtn.textContent='♪';
+
+  }else{
+
+    playMusic();
+
+  }
+
+});
+
+/* OPEN DOORS, THEN REMOVE DOOR SECTION */
+
+const opening=document.getElementById('opening');
+const startBtn=document.getElementById('startBtn');
+
+let opened=false;
+
+startBtn.addEventListener('click',()=>{
+
+  if(opened)return;
+
+  opened=true;
+
+  playMusic();
+
+  opening.classList.add('open');
+
+  document.getElementById('openText').style.opacity='0';
+
+  setTimeout(()=>{
+
+    document.body.classList.remove('locked');
+
+    opening.style.display='none';
+
+    document.getElementById('intro').scrollIntoView({
+      behavior:'instant'
+    });
+
+    setTimeout(()=>{
+      animateIntroWords();
+    },300);
+
+  },2800);
+
+});
+
+/* WORD BY WORD INTRO */
+
+function animateIntroWords(){
+
+  const intro=document.getElementById('introText');
+
+  if(intro.dataset.animated)return;
+
+  intro.dataset.animated='yes';
+  intro.classList.add('show');
+
+  const walker=document.createTreeWalker(
+    intro,
+    NodeFilter.SHOW_TEXT
+  );
+
+  const nodes=[];
+
+  while(walker.nextNode()){
+
+    if(walker.currentNode.textContent.trim()){
+      nodes.push(walker.currentNode);
+    }
+
+  }
+
+  let delay=0;
+
+  nodes.forEach(node=>{
+
+    const words=node.textContent.split(/(\s+)/);
+
+    const fragment=document.createDocumentFragment();
+
+    words.forEach(word=>{
+
+      if(!word.trim()){
+
+        fragment.appendChild(document.createTextNode(word));
+
+      }else{
+
+        const span=document.createElement('span');
+
+        span.textContent=word;
+        span.style.opacity='0';
+        span.style.transition='opacity .25s';
+
+        fragment.appendChild(span);
+
+        setTimeout(()=>{
+          span.style.opacity='1';
+        },delay);
+
+        delay+=105;
+
+      }
+
+    });
+
+    node.parentNode.replaceChild(fragment,node);
+
+  });
+
+}
+
+/* SCRATCH CARD */
+
+const canvas=document.getElementById('scratchCanvas');
+const ctx=canvas.getContext('2d');
+const scratchWrap=document.querySelector('.scratchWrap');
+
+let scratching=false;
+let revealed=false;
+
+function setupScratch(){
+
+  const rect=scratchWrap.getBoundingClientRect();
+  const dpr=window.devicePixelRatio||1;
+
+  canvas.width=rect.width*dpr;
+  canvas.height=rect.height*dpr;
+
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+
+  const gradient=ctx.createLinearGradient(
+    0,0,rect.width,rect.height
+  );
+
+  gradient.addColorStop(0,'#d98eac');
+  gradient.addColorStop(1,'#f5c5d6');
+
+  ctx.fillStyle=gradient;
+  ctx.fillRect(0,0,rect.width,rect.height);
+
+  ctx.fillStyle='white';
+  ctx.font='25px cursive';
+  ctx.textAlign='center';
+
+  ctx.fillText(
+    '♡ Scratch Here ♡',
+    rect.width/2,
+    rect.height/2
+  );
+
+  ctx.font='12px sans-serif';
+
+  ctx.fillText(
+    'A SPECIAL DAY AWAITS',
+    rect.width/2,
+    rect.height/2+25
+  );
+
+}
+
+setupScratch();
+
+function scratch(e){
+
+  if(revealed)return;
+
+  const rect=canvas.getBoundingClientRect();
+
+  const x=e.clientX-rect.left;
+  const y=e.clientY-rect.top;
+
+  ctx.globalCompositeOperation='destination-out';
+
+  ctx.beginPath();
+  ctx.arc(x,y,23,0,Math.PI*2);
+  ctx.fill();
+
+  checkScratch();
+
+}
+
+function checkScratch(){
+
+  const pixels=ctx.getImageData(
+    0,0,canvas.width,canvas.height
+  ).data;
+
+  let cleared=0;
+
+  for(let i=3;i<pixels.length;i+=4){
+
+    if(pixels[i]<30)cleared++;
+
+  }
+
+  const percentage=cleared/(pixels.length/4);
+
+  if(percentage>.5){
+
+    revealed=true;
+
+    canvas.style.transition='opacity 1s';
+    canvas.style.opacity='0';
+
+    setTimeout(()=>{
+      canvas.style.display='none';
+    },1100);
+
+    pinkConfetti();
+
+  }
+
+}
+
+canvas.addEventListener('pointerdown',e=>{
+
+  scratching=true;
+  canvas.setPointerCapture(e.pointerId);
+  scratch(e);
+
+});
+
+canvas.addEventListener('pointermove',e=>{
+
+  if(scratching)scratch(e);
+
+});
+
+canvas.addEventListener('pointerup',()=>scratching=false);
+
+canvas.addEventListener('pointercancel',()=>scratching=false);
+
+/* PINK SPARKLE CONFETTI */
+
+function pinkConfetti(){
+
+  for(let i=0;i<65;i++){
+
+    const c=document.createElement('div');
+
+    c.style.position='fixed';
+    c.style.zIndex='150';
+    c.style.top='-15px';
+    c.style.left=Math.random()*100+'vw';
+
+    c.style.width=(4+Math.random()*7)+'px';
+    c.style.height=(4+Math.random()*7)+'px';
+
+    c.style.background=Math.random()>.5
+      ?'#ffb7d0':'#fff';
+
+    c.style.borderRadius=Math.random()>.5
+      ?'50%':'2px';
+
+    c.style.pointerEvents='none';
+
+    document.body.appendChild(c);
+
+    const duration=2500+Math.random()*2500;
+
+    c.animate([
+
+      {
+        transform:'translateY(0) rotate(0deg)',
+        opacity:1
+      },
+
+      {
+        transform:`translateY(110vh) rotate(${Math.random()*900}deg)`,
+        opacity:0
+      }
+
+    ],{
+      duration,
+      easing:'ease-in'
+    });
+
+    setTimeout(()=>{
+      c.remove();
+    },duration);
+
+  }
+
+}
+
+/* COUNTDOWN */
+
+function updateCountdown(){
+
+  const target=new Date(
+    '2027-01-19T00:00:00'
+  ).getTime();
+
+  const now=Date.now();
+
+  let diff=Math.max(0,target-now);
+
+  const d=Math.floor(diff/86400000);
+  const h=Math.floor((diff%86400000)/3600000);
+  const m=Math.floor((diff%3600000)/60000);
+  const s=Math.floor((diff%60000)/1000);
+
+  document.getElementById('days').textContent=d;
+
+  document.getElementById('hours').textContent=
+    String(h).padStart(2,'0');
+
+  document.getElementById('minutes').textContent=
+    String(m).padStart(2,'0');
+
+  document.getElementById('seconds').textContent=
+    String(s).padStart(2,'0');
+
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+/* VIDEO AUTOPLAY WHEN SECTION APPEARS */
+
+const videoObserver=new IntersectionObserver(entries=>{
+
+  entries.forEach(entry=>{
+
+    const videos=entry.target.querySelectorAll('video');
+
+    videos.forEach(video=>{
+
+      if(entry.isIntersecting){
+
+        video.play().catch(()=>{});
+
+      }else{
+
+        video.pause();
+
+      }
+
+    });
+
+  });
+
+},{threshold:.25});
+
+document.querySelectorAll(
+  '#countdown,#celebration,#journey'
+).forEach(section=>{
+  videoObserver.observe(section);
+});
+
+/* PLANE JOURNEY: INDIA TO ROZA */
+
+const journeySection=document.getElementById('journey');
+
+const planeObserver=new IntersectionObserver(entries=>{
+
+  entries.forEach(entry=>{
+
+    if(entry.isIntersecting){
+
+      journeySection.classList.add('active');
+
+    }else{
+
+      journeySection.classList.remove('active');
+
+    }
+
+  });
+
+},{
+  threshold:0.35
+});
+
+planeObserver.observe(journeySection);
+
+/* REVEAL ANIMATIONS */
+
+const revealObserver=new IntersectionObserver(entries=>{
+
+  entries.forEach(entry=>{
+
+    if(entry.isIntersecting){
+
+      entry.target.classList.add('visible');
+
+    }
+
+  });
+
+},{threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el=>{
+  revealObserver.observe(el);
+});
+
+</script>
+
+</body>
+</html>
+
