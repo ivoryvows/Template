@@ -78,7 +78,7 @@ section {
 
 .white {
   color:#fff;
-  text-shadow:0 1px 7px rgba(104,44,68,.22);
+  text-shadow:0 1px 7px rgba(55,20,35,.5);
 }
 
 h2 {
@@ -91,7 +91,7 @@ p {
   line-height:1.5;
 }
 
-/* FALLING DOTS */
+/* FALLING WHITE DOTS */
 
 #particles {
   position:fixed;
@@ -137,6 +137,15 @@ p {
 
 #opening {
   background:#f7e5ec;
+}
+
+.openingBg {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:1;
 }
 
 .door {
@@ -193,14 +202,14 @@ p {
   border:0;
 }
 
-/* INTRO IMAGE */
+/* INTRO */
 
 #intro {
   background:#edc5d3;
 }
 
 .introText {
-  max-width:390px;
+  max-width:350px;
   margin:auto;
   opacity:0;
   transition:opacity .5s;
@@ -212,13 +221,13 @@ p {
 
 .bismillah {
   font-size:27px;
-  margin-bottom:13px;
+  margin-bottom:15px;
 }
 
 .introText p {
-  margin:5px 0;
+  margin:6px 0;
   font-size:15px;
-  line-height:1.4;
+  line-height:1.45;
 }
 
 .couple {
@@ -232,7 +241,7 @@ p {
   margin-top:0!important;
 }
 
-/* AYAT - DIRECTLY ON BACKGROUND, NO FRAMES */
+/* AYAT */
 
 #ayat {
   background:#e9b9cd;
@@ -242,7 +251,7 @@ p {
   width:100%;
   max-width:500px;
   min-height:100svh;
-  padding:8vh 25px 7vh;
+  padding:5vh 25px 6vh;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -252,26 +261,28 @@ p {
 .welcomeText {
   width:100%;
   max-width:340px;
-  font-size:13px;
-  line-height:1.45;
-  margin-top:0;
+  margin-top:12vh;
+  color:#fff;
+  font-weight:700;
+  text-shadow:0 2px 7px rgba(35,12,25,.8);
 }
 
 .welcomeText p {
   font-size:13px;
-  line-height:1.45;
+  line-height:1.35;
+  font-weight:700;
 }
 
 .ayatQuote {
   width:100%;
   max-width:400px;
   margin-top:auto;
-  padding-top:55px;
+  padding-top:22px;
 }
 
 .ayatArabic {
   font-size:21px;
-  line-height:1.8;
+  line-height:1.7;
   font-weight:700;
   margin-bottom:10px;
 }
@@ -287,7 +298,7 @@ p {
   font-size:13px!important;
 }
 
-/* DATE REVEAL */
+/* DATE REVEAL - HEART SCRATCH */
 
 #dateReveal .content {
   max-width:450px;
@@ -295,30 +306,30 @@ p {
 
 .dateHeading {
   font-size:29px;
-  margin-bottom:20px;
+  margin-bottom:12px;
 }
 
 .scratchWrap {
   position:relative;
   width:min(310px,85vw);
-  height:180px;
+  height:190px;
   margin:auto;
-  border-radius:22px;
-  overflow:hidden;
-  border:3px solid white;
-  box-shadow:0 8px 30px #b66d8c44;
-  background:#f7cbd9;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  overflow:visible;
+  box-shadow:none;
 }
 
 .dateUnder {
   position:absolute;
   inset:0;
-  background:linear-gradient(145deg,#f8dce6,#fff5f8);
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  color:#b56e8c;
+  color:white;
+  text-shadow:0 2px 8px rgba(80,30,50,.65);
 }
 
 .dateUnder strong {
@@ -343,7 +354,7 @@ p {
 }
 
 .scratchHint {
-  margin-top:15px;
+  margin-top:8px;
   font-size:15px;
 }
 
@@ -364,7 +375,7 @@ p {
 .countOverlay {
   position:absolute;
   z-index:3;
-  bottom:17%;
+  bottom:14.5%;
   width:100%;
   text-align:center;
   padding:10px;
@@ -406,8 +417,23 @@ p {
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:space-between;
-  padding:25px 15px 24px;
+  justify-content:center;
+  gap:10px;
+  padding:22px 15px 24px;
+}
+
+#celebration .videoBox {
+  width:100%;
+  max-width:430px;
+  margin:0 auto;
+}
+
+#celebration .videoBox video {
+  width:100%;
+  height:auto;
+  max-height:52svh;
+  object-fit:contain;
+  display:block;
 }
 
 .curveHeading {
@@ -416,25 +442,13 @@ p {
   border-radius:45% 45% 10px 10px;
   padding:11px 22px 9px;
   font-size:23px;
-  margin-bottom:12px;
+  margin:8px 0 0;
   flex-shrink:0;
-}
-
-.videoBox {
-  width:100%;
-  max-width:550px;
-  margin:auto;
-}
-
-.videoBox video {
-  width:100%;
-  height:auto;
-  display:block;
 }
 
 .mapBtn {
   display:inline-block;
-  margin-top:10px;
+  margin-top:8px;
   border:1px solid white;
   border-radius:30px;
   padding:9px 21px;
@@ -454,6 +468,10 @@ p {
   flex-shrink:0;
 }
 
+.celebrationLocation {
+  margin-top:0;
+}
+
 /* JOURNEY */
 
 #journey {
@@ -465,10 +483,15 @@ p {
   max-width:470px;
   min-height:100svh;
   margin:auto;
-  padding:18px 20px 24px;
+  padding:28px 20px 30px;
   display:flex;
   flex-direction:column;
   align-items:center;
+}
+
+.storyBlock {
+  margin-top:15px;
+  width:100%;
 }
 
 .storyText {
@@ -524,8 +547,6 @@ p {
   transform:translateY(-12px) rotate(-5deg);
 }
 
-/* Plane waits at India, then flies to Roza */
-
 .plane {
   position:absolute;
   left:14%;
@@ -549,8 +570,6 @@ p {
     transform:rotate(0deg);
   }
 
-  /* Wait near India flag */
-
   20% {
     left:14%;
     top:3px;
@@ -558,16 +577,12 @@ p {
     transform:rotate(0deg);
   }
 
-  /* Fly towards Roza */
-
   85% {
     left:78%;
     top:-8px;
     opacity:1;
     transform:rotate(10deg);
   }
-
-  /* Stop at Roza */
 
   100% {
     left:78%;
@@ -584,13 +599,15 @@ p {
 }
 
 #journey .videoBox {
+  width:100%;
   margin:auto;
   flex-shrink:0;
 }
 
 .journeyLocation {
   margin-top:auto;
-  padding-top:12px;
+  padding-top:8px;
+  margin-bottom:12px;
 }
 
 /* GIFTS AND FINAL FRAME */
@@ -681,6 +698,15 @@ p {
   .translation {
     font-size:13px!important;
   }
+
+  #journey .content {
+    padding-top:25px;
+    padding-bottom:25px;
+  }
+
+  #celebration .videoBox {
+    max-width:95%;
+  }
 }
 </style>
 </head>
@@ -696,10 +722,16 @@ p {
 <!-- 1. OPENING DOORS -->
 
 <section id="opening">
+
+  <img src="info.jpg" class="openingBg" alt="">
+
   <img src="l.jpg" class="door" id="leftDoor" alt="">
   <img src="r.jpg" class="door" id="rightDoor" alt="">
+
   <div class="openText" id="openText">Tap to Open</div>
+
   <button id="startBtn" aria-label="Open invitation"></button>
+
 </section>
 
 <!-- 2. INTRO IMAGE -->
@@ -715,11 +747,15 @@ p {
       </div>
 
       <p>
-        With the blessing of Masomeen (A.S.) and the prayers of our elders,
+        With the blessing of Masomeen (A.S.)
+        <br>
+        and the prayers of our elders,
       </p>
 
       <p>
-        we warmly invite you to share in our joy and witness the Nikkah of
+        we warmly invite you to share
+        <br>
+        in our joy and witness the Nikkah of
       </p>
 
       <div class="couple">Sanaa</div>
@@ -737,14 +773,16 @@ p {
       </p>
 
       <p>
-        May Allah (SWT) bless their bond with love, barakah, and peace.
+        May Allah (SWT) bless their bond
+        <br>
+        with love, barakah, and peace.
       </p>
 
     </div>
   </div>
 </section>
 
-<!-- 3. AYAT - NO FRAMES -->
+<!-- 3. AYAT -->
 
 <section id="ayat">
   <img src="ayat.JPG" class="bg" alt="">
@@ -754,12 +792,20 @@ p {
     <div class="welcomeText reveal">
       <p>
         We are honored to welcome you to the
+        <br>
         blessed Nikkah ceremony of Sanaa & Areeb.
-        <br><br>
-        As they unite in faith, mercy, and love under the
-        blessings of Allah (SWT) and Masomeen (A.S.),
-        we thank you for sharing in our joy and
-        praying for their lifelong happiness.
+        <br>
+        As they unite in faith, mercy, and love
+        <br>
+        under the blessings of Allah (SWT)
+        <br>
+        and Masomeen (A.S.),
+        <br>
+        we thank you
+        <br>
+        for sharing in our joy
+        <br>
+        and praying for their lifelong happiness.
       </p>
     </div>
 
@@ -767,6 +813,7 @@ p {
 
       <div class="arabic ayatArabic">
         وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+        <br>
         لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
       </div>
 
@@ -783,7 +830,7 @@ p {
   </div>
 </section>
 
-<!-- 4. DATE REVEAL -->
+<!-- 4. DATE REVEAL - HEART SCRATCH -->
 
 <section id="dateReveal">
   <img src="back.JPG" class="bg" alt="">
@@ -794,7 +841,7 @@ p {
       A beautiful beginning...
     </div>
 
-    <p style="font-size:16px;margin-bottom:20px">
+    <p style="font-size:16px;margin-bottom:10px">
       A beautiful day, written by destiny,
       <br>
       a precious date to cherish forever.
@@ -812,7 +859,7 @@ p {
     </div>
 
     <p class="scratchHint">
-      Gently scratch to reveal our special day ♡
+      Gently scratch the heart to reveal our special day ♡
     </p>
 
   </div>
@@ -862,10 +909,6 @@ p {
 
   <div class="content white">
 
-    <div class="curveHeading script reveal">
-      Join us for the celebration of
-    </div>
-
     <div class="videoBox reveal">
       <video src="mehfil.mov"
         autoplay muted loop playsinline
@@ -873,7 +916,11 @@ p {
       </video>
     </div>
 
-    <div class="celebrationLocation">
+    <div class="curveHeading script reveal">
+      Join us for the celebration of
+    </div>
+
+    <div class="celebrationLocation reveal">
 
       <a class="mapBtn" target="_blank" rel="noopener"
          href="https://www.google.com/maps/search/?api=1&query=Alimentos+Banquet+Ahmedabad">
@@ -897,7 +944,7 @@ p {
 
   <div class="content white">
 
-    <div class="reveal">
+    <div class="storyBlock reveal">
 
       <p class="storyText">
         How gently destiny brought us to each other,
@@ -1055,7 +1102,7 @@ musicBtn.addEventListener('click',()=>{
 
 });
 
-/* OPEN DOORS, THEN REMOVE DOOR SECTION */
+/* OPEN DOORS */
 
 const opening=document.getElementById('opening');
 const startBtn=document.getElementById('startBtn');
@@ -1158,7 +1205,7 @@ function animateIntroWords(){
 
 }
 
-/* SCRATCH CARD */
+/* HEART-SHAPED SCRATCH AREA */
 
 const canvas=document.getElementById('scratchCanvas');
 const ctx=canvas.getContext('2d');
@@ -1166,6 +1213,30 @@ const scratchWrap=document.querySelector('.scratchWrap');
 
 let scratching=false;
 let revealed=false;
+let heartMask=null;
+let heartPixelCount=0;
+
+function heartPath(context,cx,cy,size){
+
+  context.beginPath();
+
+  context.moveTo(cx,cy+size*.38);
+
+  context.bezierCurveTo(
+    cx-size*.95,cy-size*.20,
+    cx-size*.65,cy-size*.95,
+    cx,cy-size*.48
+  );
+
+  context.bezierCurveTo(
+    cx+size*.65,cy-size*.95,
+    cx+size*.95,cy-size*.20,
+    cx,cy+size*.38
+  );
+
+  context.closePath();
+
+}
 
 function setupScratch(){
 
@@ -1176,34 +1247,57 @@ function setupScratch(){
   canvas.height=rect.height*dpr;
 
   ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.clearRect(0,0,rect.width,rect.height);
 
-  const gradient=ctx.createLinearGradient(
-    0,0,rect.width,rect.height
-  );
+  const cx=rect.width/2;
+  const cy=rect.height/2;
+  const size=Math.min(rect.width*.43,rect.height*.43);
 
-  gradient.addColorStop(0,'#d98eac');
-  gradient.addColorStop(1,'#f5c5d6');
+  /* Soft translucent heart surface */
 
-  ctx.fillStyle=gradient;
-  ctx.fillRect(0,0,rect.width,rect.height);
+  heartPath(ctx,cx,cy,size);
+
+  ctx.fillStyle='rgba(255,255,255,.35)';
+  ctx.fill();
+
+  /* White heart outline */
+
+  heartPath(ctx,cx,cy,size);
+
+  ctx.strokeStyle='rgba(255,255,255,.98)';
+  ctx.lineWidth=3;
+  ctx.stroke();
+
+  /* Scratch instruction inside heart */
 
   ctx.fillStyle='white';
-  ctx.font='25px cursive';
   ctx.textAlign='center';
+  ctx.textBaseline='middle';
+  ctx.shadowColor='rgba(100,40,65,.45)';
+  ctx.shadowBlur=5;
 
-  ctx.fillText(
-    '♡ Scratch Here ♡',
-    rect.width/2,
-    rect.height/2
-  );
+  ctx.font='bold 12px DM Sans, sans-serif';
+  ctx.fillText('SCRATCH HERE',cx,cy+5);
 
-  ctx.font='12px sans-serif';
+  ctx.shadowBlur=0;
 
-  ctx.fillText(
-    'A SPECIAL DAY AWAITS',
-    rect.width/2,
-    rect.height/2+25
-  );
+  /* Store heart-only pixels for scratch percentage */
+
+  const image=ctx.getImageData(0,0,canvas.width,canvas.height);
+
+  heartMask=new Uint8Array(canvas.width*canvas.height);
+  heartPixelCount=0;
+
+  for(let i=0,p=3;i<heartMask.length;i++,p+=4){
+
+    if(image.data[p]>30){
+
+      heartMask[i]=1;
+      heartPixelCount++;
+
+    }
+
+  }
 
 }
 
@@ -1221,7 +1315,7 @@ function scratch(e){
   ctx.globalCompositeOperation='destination-out';
 
   ctx.beginPath();
-  ctx.arc(x,y,23,0,Math.PI*2);
+  ctx.arc(x,y,13,0,Math.PI*2);
   ctx.fill();
 
   checkScratch();
@@ -1230,19 +1324,23 @@ function scratch(e){
 
 function checkScratch(){
 
+  if(!heartMask || !heartPixelCount)return;
+
   const pixels=ctx.getImageData(
     0,0,canvas.width,canvas.height
   ).data;
 
   let cleared=0;
 
-  for(let i=3;i<pixels.length;i+=4){
+  for(let i=0,p=3;i<heartMask.length;i++,p+=4){
 
-    if(pixels[i]<30)cleared++;
+    if(heartMask[i] && pixels[p]<30){
+      cleared++;
+    }
 
   }
 
-  const percentage=cleared/(pixels.length/4);
+  const percentage=cleared/heartPixelCount;
 
   if(percentage>.5){
 
@@ -1447,4 +1545,3 @@ document.querySelectorAll('.reveal').forEach(el=>{
 
 </body>
 </html>
-
