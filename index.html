@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +13,7 @@
 :root {
   --pink:#e8a8bd;
   --deep:#bd7895;
+  --softPink:#df8eae;
   --white:#fffafd;
 }
 
@@ -133,7 +133,7 @@ p {
   display:none;
 }
 
-/* OPENING DOORS */
+/* OPENING GATE */
 
 #opening {
   background:#f7e5ec;
@@ -202,14 +202,21 @@ p {
   border:0;
 }
 
-/* INTRO */
+/* INFO IMAGE + INVITATION TEXT AFTER GATE */
 
-#intro {
+#infoImage {
   background:#edc5d3;
 }
 
+#infoImage .content {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
 .introText {
-  max-width:350px;
+  width:100%;
+  max-width:370px;
   margin:auto;
   opacity:0;
   transition:opacity .5s;
@@ -221,18 +228,18 @@ p {
 
 .bismillah {
   font-size:27px;
-  margin-bottom:15px;
+  margin-bottom:16px;
 }
 
 .introText p {
-  margin:6px 0;
-  font-size:15px;
-  line-height:1.45;
+  margin:8px 0;
+  font-size:16px;
+  line-height:1.5;
 }
 
 .couple {
   font-family:'Great Vibes',cursive;
-  font-size:36px;
+  font-size:39px;
   margin:3px 0;
 }
 
@@ -241,7 +248,7 @@ p {
   margin-top:0!important;
 }
 
-/* AYAT */
+/* AYAT SECTION */
 
 #ayat {
   background:#e9b9cd;
@@ -251,54 +258,60 @@ p {
   width:100%;
   max-width:500px;
   min-height:100svh;
-  padding:5vh 25px 6vh;
+  padding:6vh 23px 7vh;
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:space-between;
+  justify-content:center;
+  gap:35px;
 }
 
 .welcomeText {
   width:100%;
-  max-width:340px;
-  margin-top:12vh;
-  color:#fff;
+  max-width:350px;
+  color:var(--softPink);
+  text-shadow:0 1px 4px rgba(90,35,60,.2);
   font-weight:700;
-  text-shadow:0 2px 7px rgba(35,12,25,.8);
+  margin:0;
+  transform:translateY(-18px);
 }
 
 .welcomeText p {
   font-size:13px;
-  line-height:1.35;
+  line-height:1.5;
   font-weight:700;
 }
 
 .ayatQuote {
   width:100%;
-  max-width:400px;
-  margin-top:auto;
-  padding-top:22px;
+  max-width:410px;
+  margin:0;
+  transform:translateY(18px);
+  color:var(--softPink);
+  text-shadow:0 1px 4px rgba(90,35,60,.2);
 }
 
 .ayatArabic {
   font-size:21px;
-  line-height:1.7;
+  line-height:1.75;
   font-weight:700;
-  margin-bottom:10px;
+  margin-bottom:13px;
 }
 
 .translation {
   font-style:italic;
-  font-size:14px!important;
-  line-height:1.5;
+  font-size:13px!important;
+  line-height:1.55;
+  font-weight:600;
 }
 
 .reference {
   margin-top:8px;
-  font-size:13px!important;
+  font-size:12px!important;
+  font-weight:700;
 }
 
-/* DATE REVEAL - HEART SCRATCH */
+/* DATE REVEAL - PREVIOUS SILVER SCRATCH HEART */
 
 #dateReveal .content {
   max-width:450px;
@@ -311,14 +324,12 @@ p {
 
 .scratchWrap {
   position:relative;
-  width:min(310px,85vw);
-  height:190px;
-  margin:auto;
+  width:min(330px,88vw);
+  height:230px;
+  margin:12px auto 0;
   background:transparent;
   border:0;
-  border-radius:0;
   overflow:visible;
-  box-shadow:none;
 }
 
 .dateUnder {
@@ -330,18 +341,20 @@ p {
   align-items:center;
   color:white;
   text-shadow:0 2px 8px rgba(80,30,50,.65);
+  z-index:0;
 }
 
 .dateUnder strong {
-  font-size:35px;
+  font-size:clamp(27px,7vw,35px);
   font-family:'Great Vibes',cursive;
+  white-space:nowrap;
 }
 
 .dateUnder span {
   font-family:'DM Sans',sans-serif;
-  font-size:12px;
+  font-size:11px;
   letter-spacing:3px;
-  margin-top:10px;
+  margin-top:8px;
 }
 
 #scratchCanvas {
@@ -351,6 +364,7 @@ p {
   height:100%;
   touch-action:none;
   cursor:crosshair;
+  z-index:2;
 }
 
 .scratchHint {
@@ -417,33 +431,33 @@ p {
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:22px 15px 24px;
-}
-
-#celebration .videoBox {
-  width:100%;
-  max-width:430px;
-  margin:0 auto;
-}
-
-#celebration .videoBox video {
-  width:100%;
-  height:auto;
-  max-height:52svh;
-  object-fit:contain;
-  display:block;
+  justify-content:flex-start;
+  gap:12px;
+  padding:6vh 15px 25px;
 }
 
 .curveHeading {
   display:inline-block;
   border:1px solid white;
   border-radius:45% 45% 10px 10px;
-  padding:11px 22px 9px;
-  font-size:23px;
-  margin:8px 0 0;
+  padding:13px 24px 11px;
+  font-size:25px;
+  margin:0 0 7px;
   flex-shrink:0;
+}
+
+#celebration .videoBox {
+  width:100%;
+  max-width:490px;
+  margin:0 auto;
+}
+
+#celebration .videoBox video {
+  width:100%;
+  height:auto;
+  max-height:63svh;
+  object-fit:contain;
+  display:block;
 }
 
 .mapBtn {
@@ -469,7 +483,8 @@ p {
 }
 
 .celebrationLocation {
-  margin-top:0;
+  margin-top:auto;
+  padding-bottom:8px;
 }
 
 /* JOURNEY */
@@ -483,25 +498,26 @@ p {
   max-width:470px;
   min-height:100svh;
   margin:auto;
-  padding:28px 20px 30px;
+  padding:25px 20px 25px;
   display:flex;
   flex-direction:column;
   align-items:center;
+  justify-content:flex-start;
 }
 
 .storyBlock {
-  margin-top:15px;
+  margin-top:5px;
   width:100%;
 }
 
 .storyText {
-  font-size:16px;
-  line-height:1.45;
+  font-size:14px;
+  line-height:1.4;
 }
 
 .storySmall {
-  font-size:14px;
-  margin-top:6px;
+  font-size:12px;
+  margin-top:5px;
 }
 
 .storyNames {
@@ -512,7 +528,7 @@ p {
 
 .qubool {
   font-family:'Great Vibes',cursive;
-  font-size:23px;
+  font-size:22px;
 }
 
 /* FLIGHT: INDIA TO ROZA */
@@ -524,7 +540,7 @@ p {
   position:relative;
   width:100%;
   max-width:280px;
-  margin:13px auto 10px;
+  margin:10px auto 8px;
   height:55px;
   flex-shrink:0;
 }
@@ -592,22 +608,25 @@ p {
   }
 }
 
+#journey .videoBox {
+  width:90%;
+  max-width:410px;
+  margin:5px auto 0;
+  flex-shrink:0;
+}
+
 #nikahVideo {
   width:100%;
   height:auto;
   display:block;
-}
-
-#journey .videoBox {
-  width:100%;
-  margin:auto;
-  flex-shrink:0;
+  max-height:47svh;
+  object-fit:contain;
 }
 
 .journeyLocation {
   margin-top:auto;
-  padding-top:8px;
-  margin-bottom:12px;
+  padding-top:10px;
+  padding-bottom:8px;
 }
 
 /* GIFTS AND FINAL FRAME */
@@ -674,8 +693,54 @@ p {
     font-size:14px;
   }
 
+  .couple {
+    font-size:35px;
+  }
+
+  .welcomeText p {
+    font-size:12px;
+  }
+
+  #ayat .content {
+    gap:28px;
+    padding-top:5vh;
+    padding-bottom:5vh;
+  }
+
+  .welcomeText {
+    transform:translateY(-14px);
+  }
+
+  .ayatQuote {
+    transform:translateY(14px);
+  }
+
+  .ayatArabic {
+    font-size:19px;
+  }
+
+  .translation {
+    font-size:12px!important;
+  }
+
+  .curveHeading {
+    font-size:23px;
+  }
+
+  #celebration .content {
+    padding-top:5vh;
+  }
+
+  #celebration .videoBox {
+    max-width:100%;
+  }
+
   .storyText {
-    font-size:15px;
+    font-size:13px;
+  }
+
+  .storySmall {
+    font-size:11px;
   }
 
   .storyNames {
@@ -686,26 +751,13 @@ p {
     font-size:21px;
   }
 
-  .welcomeText,
-  .welcomeText p {
-    font-size:12px;
-  }
-
-  .ayatArabic {
-    font-size:19px;
-  }
-
-  .translation {
-    font-size:13px!important;
-  }
-
   #journey .content {
-    padding-top:25px;
-    padding-bottom:25px;
+    padding-top:20px;
+    padding-bottom:20px;
   }
 
-  #celebration .videoBox {
-    max-width:95%;
+  #journey .videoBox {
+    width:88%;
   }
 }
 </style>
@@ -719,7 +771,7 @@ p {
 
 <button id="musicBtn" aria-label="Toggle music">♫</button>
 
-<!-- 1. OPENING DOORS -->
+<!-- 1. OPENING GATE -->
 
 <section id="opening">
 
@@ -734,10 +786,10 @@ p {
 
 </section>
 
-<!-- 2. INTRO IMAGE -->
+<!-- 2. INFO IMAGE WITH INVITATION TEXT -->
 
-<section id="intro">
-  <img src="intro.jpg" class="bg" alt="">
+<section id="infoImage">
+  <img src="info.jpg" class="bg" alt="">
 
   <div class="content white">
     <div class="introText" id="introText">
@@ -799,13 +851,7 @@ p {
         <br>
         under the blessings of Allah (SWT)
         <br>
-        and Masomeen (A.S.),
-        <br>
-        we thank you
-        <br>
-        for sharing in our joy
-        <br>
-        and praying for their lifelong happiness.
+        and Masomeen (A.S.), we thank you.
       </p>
     </div>
 
@@ -818,7 +864,11 @@ p {
       </div>
 
       <p class="translation">
-        "And of His signs is that He created for you from yourselves mates that you may find tranquility in them, and He placed between you affection and mercy."
+        "And of His signs is that He created for you
+        <br>
+        mates that you may find tranquility in them,
+        <br>
+        and placed between you affection and mercy."
       </p>
 
       <p class="reference">
@@ -830,7 +880,7 @@ p {
   </div>
 </section>
 
-<!-- 4. DATE REVEAL - HEART SCRATCH -->
+<!-- 4. DATE REVEAL - SILVER HEART SCRATCH -->
 
 <section id="dateReveal">
   <img src="back.JPG" class="bg" alt="">
@@ -909,15 +959,15 @@ p {
 
   <div class="content white">
 
+    <div class="curveHeading script reveal">
+      Join us for the celebration of
+    </div>
+
     <div class="videoBox reveal">
       <video src="mehfil.mov"
         autoplay muted loop playsinline
         preload="metadata">
       </video>
-    </div>
-
-    <div class="curveHeading script reveal">
-      Join us for the celebration of
     </div>
 
     <div class="celebrationLocation reveal">
@@ -988,7 +1038,7 @@ p {
 
     </div>
 
-    <div class="journeyLocation">
+    <div class="journeyLocation reveal">
 
       <a class="mapBtn" target="_blank" rel="noopener"
          href="https://www.google.com/maps/search/?api=1&query=Golden+Pearls+Banquet+Ahmedabad">
@@ -1102,7 +1152,7 @@ musicBtn.addEventListener('click',()=>{
 
 });
 
-/* OPEN DOORS */
+/* OPEN GATE */
 
 const opening=document.getElementById('opening');
 const startBtn=document.getElementById('startBtn');
@@ -1127,13 +1177,13 @@ startBtn.addEventListener('click',()=>{
 
     opening.style.display='none';
 
-    document.getElementById('intro').scrollIntoView({
+    document.getElementById('infoImage').scrollIntoView({
       behavior:'instant'
     });
 
     setTimeout(()=>{
       animateIntroWords();
-    },300);
+    },350);
 
   },2800);
 
@@ -1205,7 +1255,7 @@ function animateIntroWords(){
 
 }
 
-/* HEART-SHAPED SCRATCH AREA */
+/* PREVIOUS WEBSITE STYLE - SILVER SCRATCH HEART */
 
 const canvas=document.getElementById('scratchCanvas');
 const ctx=canvas.getContext('2d');
@@ -1215,23 +1265,25 @@ let scratching=false;
 let revealed=false;
 let heartMask=null;
 let heartPixelCount=0;
+let lastScratchX=null;
+let lastScratchY=null;
 
 function heartPath(context,cx,cy,size){
 
   context.beginPath();
 
-  context.moveTo(cx,cy+size*.38);
+  context.moveTo(cx,cy+size*.78);
 
   context.bezierCurveTo(
-    cx-size*.95,cy-size*.20,
-    cx-size*.65,cy-size*.95,
-    cx,cy-size*.48
+    cx-size*1.12,cy+size*.12,
+    cx-size*1.02,cy-size*.68,
+    cx,cy-size*.28
   );
 
   context.bezierCurveTo(
-    cx+size*.65,cy-size*.95,
-    cx+size*.95,cy-size*.20,
-    cx,cy+size*.38
+    cx+size*1.02,cy-size*.68,
+    cx+size*1.12,cy+size*.12,
+    cx,cy+size*.78
   );
 
   context.closePath();
@@ -1243,47 +1295,108 @@ function setupScratch(){
   const rect=scratchWrap.getBoundingClientRect();
   const dpr=window.devicePixelRatio||1;
 
-  canvas.width=rect.width*dpr;
-  canvas.height=rect.height*dpr;
+  canvas.width=Math.round(rect.width*dpr);
+  canvas.height=Math.round(rect.height*dpr);
 
   ctx.setTransform(dpr,0,0,dpr,0,0);
   ctx.clearRect(0,0,rect.width,rect.height);
 
   const cx=rect.width/2;
-  const cy=rect.height/2;
-  const size=Math.min(rect.width*.43,rect.height*.43);
+  const cy=rect.height*.48;
+  const size=Math.min(rect.width*.43,rect.height*.62);
 
-  /* Soft translucent heart surface */
+  /* HEART SHAPE */
 
   heartPath(ctx,cx,cy,size);
 
-  ctx.fillStyle='rgba(255,255,255,.35)';
+  /* SILVER GREY SCRATCH COATING */
+
+  const silverGradient=ctx.createLinearGradient(
+    cx-size,
+    cy-size*.65,
+    cx+size,
+    cy+size*.8
+  );
+
+  silverGradient.addColorStop(0,'#ffffff');
+  silverGradient.addColorStop(.18,'#e9e7e9');
+  silverGradient.addColorStop(.38,'#c9c5ca');
+  silverGradient.addColorStop(.55,'#f8f6f8');
+  silverGradient.addColorStop(.76,'#d8d3d9');
+  silverGradient.addColorStop(1,'#aaa5ad');
+
+  ctx.fillStyle=silverGradient;
   ctx.fill();
 
-  /* White heart outline */
+  /* SOFT SILVER SHINE */
+
+  ctx.save();
+
+  heartPath(ctx,cx,cy,size);
+  ctx.clip();
+
+  const shine=ctx.createRadialGradient(
+    cx-size*.35,
+    cy-size*.35,
+    2,
+    cx-size*.15,
+    cy-size*.2,
+    size*1.5
+  );
+
+  shine.addColorStop(0,'rgba(255,255,255,.85)');
+  shine.addColorStop(.35,'rgba(255,255,255,.28)');
+  shine.addColorStop(.7,'rgba(255,255,255,.04)');
+  shine.addColorStop(1,'rgba(90,80,100,.18)');
+
+  ctx.fillStyle=shine;
+  ctx.fillRect(0,0,rect.width,rect.height);
+
+  /* DELICATE SILVER DOT TEXTURE */
+
+  for(let y=cy-size*.65;y<cy+size*.8;y+=7){
+
+    for(let x=cx-size;x<cx+size;x+=7){
+
+      ctx.beginPath();
+      ctx.arc(x,y,0.8,0,Math.PI*2);
+      ctx.fillStyle='rgba(255,255,255,.55)';
+      ctx.fill();
+
+    }
+
+  }
+
+  ctx.restore();
+
+  /* PINK AND WHITE HEART OUTLINE */
 
   heartPath(ctx,cx,cy,size);
 
-  ctx.strokeStyle='rgba(255,255,255,.98)';
-  ctx.lineWidth=3;
+  ctx.strokeStyle='#f4ccdb';
+  ctx.lineWidth=4;
   ctx.stroke();
 
-  /* Scratch instruction inside heart */
+  heartPath(ctx,cx,cy,size);
 
-  ctx.fillStyle='white';
+  ctx.strokeStyle='rgba(255,255,255,.95)';
+  ctx.lineWidth=1.5;
+  ctx.stroke();
+
+  /* SMALL SCRATCH MESSAGE */
+
+  ctx.fillStyle='#9f8c98';
   ctx.textAlign='center';
   ctx.textBaseline='middle';
-  ctx.shadowColor='rgba(100,40,65,.45)';
-  ctx.shadowBlur=5;
+  ctx.font='600 10px DM Sans, sans-serif';
+  ctx.letterSpacing='1.5px';
+  ctx.fillText('SCRATCH HERE',cx,cy+size*.17);
 
-  ctx.font='bold 12px DM Sans, sans-serif';
-  ctx.fillText('SCRATCH HERE',cx,cy+5);
+  /* HEART PIXEL MASK */
 
-  ctx.shadowBlur=0;
-
-  /* Store heart-only pixels for scratch percentage */
-
-  const image=ctx.getImageData(0,0,canvas.width,canvas.height);
+  const image=ctx.getImageData(
+    0,0,canvas.width,canvas.height
+  );
 
   heartMask=new Uint8Array(canvas.width*canvas.height);
   heartPixelCount=0;
@@ -1303,6 +1416,20 @@ function setupScratch(){
 
 setupScratch();
 
+/* RUB TO SCRATCH */
+
+function eraseAt(x,y){
+
+  ctx.globalCompositeOperation='destination-out';
+
+  ctx.beginPath();
+  ctx.arc(x,y,16,0,Math.PI*2);
+  ctx.fill();
+
+  ctx.globalCompositeOperation='source-over';
+
+}
+
 function scratch(e){
 
   if(revealed)return;
@@ -1312,19 +1439,44 @@ function scratch(e){
   const x=e.clientX-rect.left;
   const y=e.clientY-rect.top;
 
-  ctx.globalCompositeOperation='destination-out';
+  if(lastScratchX!==null){
 
-  ctx.beginPath();
-  ctx.arc(x,y,13,0,Math.PI*2);
-  ctx.fill();
+    const distance=Math.hypot(
+      x-lastScratchX,
+      y-lastScratchY
+    );
+
+    if(distance<4)return;
+
+    const steps=Math.ceil(distance/5);
+
+    for(let i=1;i<=steps;i++){
+
+      const px=lastScratchX+(x-lastScratchX)*i/steps;
+      const py=lastScratchY+(y-lastScratchY)*i/steps;
+
+      eraseAt(px,py);
+
+    }
+
+  }else{
+
+    eraseAt(x,y);
+
+  }
+
+  lastScratchX=x;
+  lastScratchY=y;
 
   checkScratch();
 
 }
 
+/* REVEAL AFTER 50% */
+
 function checkScratch(){
 
-  if(!heartMask || !heartPixelCount)return;
+  if(!heartMask || !heartPixelCount || revealed)return;
 
   const pixels=ctx.getImageData(
     0,0,canvas.width,canvas.height
@@ -1342,18 +1494,20 @@ function checkScratch(){
 
   const percentage=cleared/heartPixelCount;
 
-  if(percentage>.5){
+  if(percentage>=.5){
 
     revealed=true;
 
-    canvas.style.transition='opacity 1s';
+    canvas.style.transition='opacity 1s ease';
     canvas.style.opacity='0';
 
     setTimeout(()=>{
-      canvas.style.display='none';
-    },1100);
 
-    pinkConfetti();
+      canvas.style.display='none';
+
+    },1050);
+
+    silverConfetti();
 
   }
 
@@ -1361,27 +1515,46 @@ function checkScratch(){
 
 canvas.addEventListener('pointerdown',e=>{
 
+  if(revealed)return;
+
   scratching=true;
+
+  lastScratchX=null;
+  lastScratchY=null;
+
   canvas.setPointerCapture(e.pointerId);
+
   scratch(e);
 
 });
 
 canvas.addEventListener('pointermove',e=>{
 
-  if(scratching)scratch(e);
+  if(scratching && !revealed){
+
+    scratch(e);
+
+  }
 
 });
 
-canvas.addEventListener('pointerup',()=>scratching=false);
+function stopScratching(){
 
-canvas.addEventListener('pointercancel',()=>scratching=false);
+  scratching=false;
+  lastScratchX=null;
+  lastScratchY=null;
 
-/* PINK SPARKLE CONFETTI */
+}
 
-function pinkConfetti(){
+canvas.addEventListener('pointerup',stopScratching);
+canvas.addEventListener('pointercancel',stopScratching);
+canvas.addEventListener('lostpointercapture',stopScratching);
 
-  for(let i=0;i<65;i++){
+/* SILVER, WHITE AND PINK FALLING CONFETTI */
+
+function silverConfetti(){
+
+  for(let i=0;i<75;i++){
 
     const c=document.createElement('div');
 
@@ -1390,20 +1563,31 @@ function pinkConfetti(){
     c.style.top='-15px';
     c.style.left=Math.random()*100+'vw';
 
-    c.style.width=(4+Math.random()*7)+'px';
-    c.style.height=(4+Math.random()*7)+'px';
+    const size=3+Math.random()*6;
 
-    c.style.background=Math.random()>.5
-      ?'#ffb7d0':'#fff';
+    c.style.width=size+'px';
+    c.style.height=size+'px';
 
-    c.style.borderRadius=Math.random()>.5
+    const colors=[
+      '#ffffff',
+      '#e9e7eb',
+      '#c9c5ce',
+      '#f4ccdb',
+      '#e8a8bd'
+    ];
+
+    c.style.background=
+      colors[Math.floor(Math.random()*colors.length)];
+
+    c.style.borderRadius=Math.random()>.35
       ?'50%':'2px';
 
+    c.style.boxShadow='0 0 5px rgba(255,255,255,.7)';
     c.style.pointerEvents='none';
 
     document.body.appendChild(c);
 
-    const duration=2500+Math.random()*2500;
+    const duration=2800+Math.random()*2500;
 
     c.animate([
 
@@ -1495,7 +1679,7 @@ document.querySelectorAll(
   videoObserver.observe(section);
 });
 
-/* PLANE JOURNEY: INDIA TO ROZA */
+/* PLANE JOURNEY */
 
 const journeySection=document.getElementById('journey');
 
